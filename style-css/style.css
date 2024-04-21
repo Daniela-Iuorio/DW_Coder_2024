@@ -1,0 +1,194 @@
+/* ------ TIPOGRAFIAS ----- */
+@import url('https://fonts.googleapis.com/css2?family=Manuale:ital,wght@0,300..800;1,300..800&display=swap');
+/* font-family: "Manuale", serif; */
+
+/* ------ VARIABLES ------*/
+:root {
+    --verde-oscuro: #14b856ff;
+    --verde-claro: #93EC49ff;
+
+}
+
+/* ---- RESETEO ---- */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+
+/* ----- Footer ----- */
+footer {
+    background-color: black;
+    /* border: solid red; */
+}
+
+footer p {
+    color: white;
+    padding: 10px;
+}
+
+/* ---- Títulos secundarios ---- */
+h2 {
+    color: var(--verde-oscuro);
+    padding: 5px;
+    margin: 5px;
+}
+
+/* ------ Barra de navegación ----- */
+.navbar-brand {
+background-color: rgba(20, 184, 86, 0.308);
+padding-left: 5px;
+padding-right: 5px;
+border-radius: 5px;
+}
+
+/* ---- botones ----- */
+.button, .courses_card-button, .resources_button{
+    border-radius: 5px;
+    border: transparent;
+    background-color:rgba(146, 236, 73, 0.247) ;
+    padding: 5px;
+    box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705)
+}
+
+.btn, .contact_button {
+    border-radius: 5px;
+    border: transparent;
+    padding: 5px;
+    box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705)
+}
+
+.button a, .courses_card-button a, .resources_button a {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+/* ------ Pagina INICIO ------ */
+.index-photo {
+    width: 300px;
+    display: inline;
+}
+
+.welcome-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 5px;
+    /* border: solid red; */
+}
+
+.news-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 5px;
+    margin: 10px;
+    box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705);
+    background-color: #ffffff;
+    border-radius: 5px;
+    /* border: solid red; */
+}
+
+/* ----- Página CURSOS ----- */
+
+.courses{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.courses_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.courses_card-button{
+    margin: 5px;
+}
+
+/* ------ Pagina NOSOTROS ----- */
+.carousel-control-next, .carousel-control-prev {
+    color: black;
+}
+.profile-picture {
+    width: 120px;
+}
+
+.teacher {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: justify;
+    align-items: center;
+    margin: 20px;
+}
+
+h3 {
+    padding: 5px;
+}
+
+.historia p {
+    text-align: justify;
+    padding: 5px;
+    margin: 5px;
+}
+
+/* ------ Pagina COMUNIDAD ------ */
+.mision-picture {
+    width: 220px;
+}
+
+/* ------ Pagina CONTACTO ------ */
+#contact-form {
+    padding: 10px;
+}
+
+#contact-form input,
+#contact-form p,
+select,
+textarea {
+    margin: 5px;
+    padding: 5px;
+}
+
+.selector-curso {
+    display: inline;
+}
+
+#comentario {
+    display: block;
+}
+
+.paragraph-icon {
+    width: 20px;
+    display: inline;
+}
+
+#contact-form {
+    background-color: rgba(20, 184, 86, 0.233);
+}
+
+.email-phone-time {
+    display: grid
+}
+
+.email-phone-time p {
+    margin: 20px;
+}
+
+.horario-atencion {
+    margin: 20px;
+    text-align: center;
+}
