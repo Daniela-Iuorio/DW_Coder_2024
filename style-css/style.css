@@ -17,10 +17,27 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex: 1;
+}
+
+.main-content {
+    flex: 1;
+}
+
+
 /* ----- Footer ----- */
 footer {
     background-color: black;
-    /* border: solid red; */
+    height: 40px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
 footer p {
@@ -32,46 +49,62 @@ footer p {
 h2 {
     color: var(--verde-oscuro);
     padding: 5px;
-    margin: 5px;
+    margin: 0px 5px 5px 5px
 }
 
 /* ------ Barra de navegación ----- */
 .navbar-brand {
-background-color: rgba(20, 184, 86, 0.308);
-padding-left: 5px;
-padding-right: 5px;
-border-radius: 5px;
+    background-color: rgba(20, 184, 86, 0.308);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+}
+
+/* ---- listas ---- */
+li {
+    list-style-type: none;
 }
 
 /* ---- botones ----- */
-.button, .courses_card-button, .resources_button{
+.button,
+.courses_card-button,
+.resources_button {
     border-radius: 5px;
     border: transparent;
-    background-color:rgba(146, 236, 73, 0.247) ;
+    background-color: rgba(146, 236, 73, 0.247);
     padding: 5px;
     box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705)
 }
 
-.btn, .contact_button {
+.btn,
+.contact_button {
     border-radius: 5px;
     border: transparent;
     padding: 5px;
     box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705)
 }
 
-.button a, .courses_card-button a, .resources_button a {
+.button a,
+.courses_card-button a,
+.resources_button a {
     color: black;
     text-decoration: none;
 }
 
 
-/* --- BODY --- */
-.body {
-    background-image: linear-gradient( to bottom, rgba(146, 236, 73, 0.671), rgba(243, 250, 246, 0.726), white );
+/* --- MAIN --- */
+.main_index,
+.courses,
+.resources,
+.nosotros,
+.comunidad,
+.contact {
+    background-image: linear-gradient(to bottom, rgba(146, 236, 73, 0.671), rgba(243, 250, 246, 0.726), white);
 }
 
 
 /* ------ Pagina INICIO ------ */
+
 .index-photo {
     width: 300px;
     display: inline;
@@ -84,7 +117,6 @@ border-radius: 5px;
     align-items: center;
     flex-wrap: nowrap;
     padding: 5px;
-    /* border: solid red; */
 }
 
 .news-box {
@@ -98,18 +130,36 @@ border-radius: 5px;
     box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705);
     background-color: #ffffff;
     border-radius: 5px;
-    /* border: solid red; */
 }
 
 /* ----- Página CURSOS ----- */
 
-.courses{
+.courses {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "elem inter"
+    "adv exam"
+    ;
 }
 
-.courses_card{
+.courses_card-elem{
+    grid-area: elem;
+}
+
+.courses_card-inter{
+    grid-area: inter;
+}
+
+.courses_card-adv{
+    grid-area: adv;
+}
+
+.courses_card-exam{
+    grid-area: exam;
+}
+
+
+.courses_card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -118,8 +168,12 @@ border-radius: 5px;
     padding-right: 5px;
 }
 
-.courses_card-button{
+.courses_card-button {
     margin: 5px;
+}
+
+.courses_card p{
+    text-align: justify;
 }
 
 /* ---- Pagina RECURSOS ----- */
@@ -128,6 +182,10 @@ border-radius: 5px;
     width: 310px;
     height: 100px;
     overflow: hidden;
+}
+
+.games_link {
+    text-decoration: none;
 }
 
 .game-picture {
@@ -143,19 +201,37 @@ border-radius: 5px;
     margin: 20px;
 }
 
-.resources ul li{
-    list-style-type: none;
-}
-.resources ul li a{
+
+.resources ul li a {
     text-decoration: none;
     color: black;
 }
 
+.resources_columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.section-videos {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+    justify-items: center;
+    grid-template-areas:
+        "video1 video2"
+        "video1 video2"
+        "video3 spotify"
+        "video3 spotify"
+    ;
+}
 
 /* ------ Pagina NOSOTROS ----- */
-.carousel-control-next, .carousel-control-prev {
+.carousel-control-next,
+.carousel-control-prev {
     color: black;
 }
+
 .profile-picture {
     width: 120px;
 }
@@ -198,9 +274,53 @@ h3 {
     margin: 5px;
 }
 
-.comunidad h2{
-    padding: 5px 5px 0px 5px;
-    margin: 5px 5px 0px 5px
+.reddit {
+    /* height: 200px; */
+    /* width: 400px; */
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705);
+    align-content: flex-start;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.redes_social-link{
+    color: rgba(0, 0, 0, 0.767);
+    font-size: 30px
+}
+
+.redes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.redes_social{
+    background-color: rgba(0, 0, 0, 0.233);
+    width:50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+@media (max-width: 425px){
+    .mision{
+        flex-direction: column;
+    }
+    .redes{
+        flex-direction: column;
+    }
+    .redes_social{
+        flex-direction: row;
+        width: 90%;
+        justify-content: space-evenly;
+        
+    }
+    h2 {
+        text-align: center;
+    }
+    
 }
 
 /* ------ Pagina CONTACTO ------ */
@@ -222,26 +342,47 @@ textarea {
 
 #comentario {
     display: block;
-}
-
-.paragraph-icon {
-    width: 20px;
-    display: inline;
-}
-
-#contact-form {
-    background-color: rgba(20, 184, 86, 0.233);
+    width: 95%;
+    height: 200px;
 }
 
 .email-phone-time {
-    display: grid
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.email-phone-time p {
-    margin: 20px;
+.email-phone-time ul,
+.email-phone-time li {
+    margin: 10px;
+    padding: 0px;
 }
+
 
 .horario-atencion {
-    margin: 20px;
+    margin: 15px;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    .selector-curso,
+    .contact_button {
+        display: block;
+    }
+}
+
+@media (max-width: 425px){
+    .email-phone-time{
+        flex-direction: column;
+    }
+    
+    .courses {
+        display: grid;
+        grid-template-areas: 
+        "elem"
+        "inter"
+        "adv"
+        "exam"
+        ;
+    }
 }
