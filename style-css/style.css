@@ -17,32 +17,19 @@
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    flex: 1;
-}
-
-.main-content {
-    flex: 1;
-}
-
 
 /* ----- Footer ----- */
 footer {
-    background-color: black;
-    height: 40px;
+    background-color: rgba(20, 184, 86, 0.486);
     bottom: 0;
     width: 100%;
     text-align: center;
 }
 
-footer p {
-    color: white;
+.footer_text {
+    color: black;
     padding: 10px;
+    margin: 0;
 }
 
 /* ---- Títulos secundarios ---- */
@@ -136,25 +123,25 @@ li {
 
 .courses {
     display: grid;
-    grid-template-areas: 
-    "elem inter"
-    "adv exam"
+    grid-template-areas:
+        "elem inter"
+        "adv exam"
     ;
 }
 
-.courses_card-elem{
+.courses_card-elem {
     grid-area: elem;
 }
 
-.courses_card-inter{
+.courses_card-inter {
     grid-area: inter;
 }
 
-.courses_card-adv{
+.courses_card-adv {
     grid-area: adv;
 }
 
-.courses_card-exam{
+.courses_card-exam {
     grid-area: exam;
 }
 
@@ -172,7 +159,7 @@ li {
     margin: 5px;
 }
 
-.courses_card p{
+.courses_card p {
     text-align: justify;
 }
 
@@ -275,8 +262,6 @@ h3 {
 }
 
 .reddit {
-    /* height: 200px; */
-    /* width: 400px; */
     border-radius: 10px;
     box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705);
     align-content: flex-start;
@@ -284,19 +269,20 @@ h3 {
     margin: 20px;
 }
 
-.redes_social-link{
+.redes_social-link {
     color: rgba(0, 0, 0, 0.767);
     font-size: 30px
 }
 
-.redes{
+.redes {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.redes_social{
+
+.redes_social {
     background-color: rgba(0, 0, 0, 0.233);
-    width:50px;
+    width: 50px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -304,29 +290,18 @@ h3 {
     margin: 10px;
 }
 
-@media (max-width: 425px){
-    .mision{
-        flex-direction: column;
-    }
-    .redes{
-        flex-direction: column;
-    }
-    .redes_social{
-        flex-direction: row;
-        width: 90%;
-        justify-content: space-evenly;
-        
-    }
-    h2 {
-        text-align: center;
-    }
-    
-}
 
 /* ------ Pagina CONTACTO ------ */
 #contact-form {
     padding: 10px;
+    /* position: relative; */
 }
+
+/* .contact_button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+} */
 
 #contact-form input,
 #contact-form p,
@@ -340,9 +315,13 @@ textarea {
     display: inline;
 }
 
+.contact_input-email{
+    width: 250px;
+}
+
 #comentario {
     display: block;
-    width: 95%;
+    width: 96%;
     height: 200px;
 }
 
@@ -363,26 +342,92 @@ textarea {
     text-align: center;
 }
 
+/* ---------Pseudoclases----------- */
+a:hover {
+    font-weight: bold;
+}
+
+i:hover {
+    font-size: 40px;
+}
+
+
+/*  ---------- MEDIA QUERIES ------------ */
+
+@media (max-width: 360px) {
+    .footer_text {
+        color: black;
+        padding: 5px;
+        margin: 0;
+        font-size: small;
+    }
+}
+
+@media (max-width: 425px) {
+    .email-phone-time {
+        flex-direction: column;
+    }
+
+    .contact_input, .contact_input-email{
+        width: 95%;
+    }
+
+    .courses {
+        display: grid;
+        grid-template-areas:
+            "elem"
+            "inter"
+            "adv"
+            "exam"
+        ;
+    }
+
+    .mision {
+        flex-direction: column;
+    }
+
+    .redes {
+        flex-direction: column;
+    }
+
+    .redes_social {
+        flex-direction: row;
+        width: 90%;
+        justify-content: space-evenly;
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+
 @media (max-width: 768px) {
 
-    .selector-curso,
     .contact_button {
         display: block;
     }
 }
 
-@media (max-width: 425px){
-    .email-phone-time{
-        flex-direction: column;
+@media (min-width: 426px) and (max-width: 768px) {
+    .contact_input-email{
+        width: 300px;
     }
+
     
-    .courses {
+}
+
+
+@media (min-width: 900px) {
+
+    .redes_social {
+        background-color: rgba(0, 0, 0, 0.137);
+        width: 150px;
+        height: 240px;
+        border-radius: 10px;
         display: grid;
-        grid-template-areas: 
-        "elem"
-        "inter"
-        "adv"
-        "exam"
-        ;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        margin: 10px;
     }
 }

@@ -54,11 +54,11 @@
         <!-- End of Bootstrap NavBar -->
         <main class="contact">
             <form action="#" method="get" id="contact-form">
-                <input type="text" placeholder="Nombre y Apellido" name="nombre-apellido">
-                <input type="email" placeholder="correo@mail.com" name="email-usuario">
-                <input type="tel" placeholder="celular sin 0 ni 15" name="celular">
+                <input class="contact_input" type="text" placeholder="Nombre y Apellido" name="nombre-apellido">
+                <input class="contact_input contact_input-email" type="email" placeholder="correo@mail.com" name="email-usuario">
+                <input class="contact_input" type="tel" placeholder="celular sin 0 ni 15" name="celular">
                 <p class="selector-curso">Curso de interés:</p>
-                <select name="Curso" class="selector-curso">
+                <select name="Curso">
                     <option value="Elem">Elementary</option>
                     <option value="Inter">Intermediate</option>
                     <option value="Adv">Advanced</option>
@@ -69,7 +69,6 @@
                 <input type="checkbox" name="suscripcion"> Recibir novedades y promociones por email.
                 <input class="contact_button" type="submit" value="Enviar">
             </form>
-            <!-- Crear divs para acomodar texto e iconos -->
             <div class="email-phone-time">
                 <ul>
                     <li><i class="fa-regular fa-envelope"></i> Dirección de correo institucional</li>
@@ -86,7 +85,7 @@
         </main>
     </div>
     <footer>
-        <p>© 2024 English Connection. All rights reserved.</p>
+        <p class="footer_text">© 2024 English Connection. All rights reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
