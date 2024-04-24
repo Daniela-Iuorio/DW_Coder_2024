@@ -147,6 +147,7 @@ li {
         "elem inter"
         "adv exam"
     ;
+    justify-items: center;
 }
 
 .courses_card-elem {
@@ -173,6 +174,7 @@ li {
     margin: 10px;
     padding-left: 5px;
     padding-right: 5px;
+    width: 400px;
 }
 
 .courses_card-button {
@@ -183,7 +185,7 @@ li {
     text-align: justify;
 }
 
-/* ---- Pagina RECURSOS ----- */
+/* ---- Pagina RECURSOS (no es responsive aún) ----- */
 
 .spotify-iframe {
     width: 310px;
@@ -223,12 +225,33 @@ li {
 .section-videos {
     display: grid;
     justify-items: center;
+    align-items: center;
     grid-template-areas:
         "video1 video2"
         "video1 video2"
-        "video3 spotify"
-        "video3 spotify"
+        "video3 spotify1"
+        "video3 spotify2"
     ;
+}
+
+.video1{
+    grid-area: video1
+}
+
+.video2{
+    grid-area: video2
+}
+
+.video3{
+    grid-area: video3
+}
+
+.spotify1{
+    grid-area: spotify1
+}
+
+.spotify2{
+    grid-area: spotify2
 }
 
 /* ------ Pagina NOSOTROS ----- */
@@ -523,5 +546,11 @@ i:hover {
         align-items: center;
         justify-items: center;
         margin: 10px;
+    }
+}
+
+@media (max-width: 1000px){
+    .courses_card{
+        width: auto;
     }
 }
