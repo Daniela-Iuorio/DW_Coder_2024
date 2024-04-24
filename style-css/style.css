@@ -95,29 +95,49 @@ li {
 .index-photo {
     width: 300px;
     display: inline;
+    grid-area: photo;
 }
 
+.rueda {
+    width: 250px;
+}
+
+.news-box,
 .welcome-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     align-items: center;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-areas:
+        "photo title"
+        "photo texto"
+    ;
     padding: 5px;
+    text-align: justify;
+}
+
+.invertida {
+    grid-template-areas:
+        "title photo"
+        "texto photo"
+    ;
 }
 
 .news-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: nowrap;
-    padding: 5px;
     margin: 10px;
     box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705);
     background-color: #ffffff;
     border-radius: 5px;
 }
+
+.news-title {
+    grid-area: title;
+}
+
+.box-text {
+    grid-area: texto;
+    padding: 0px 10px;
+}
+
+
 
 /* ----- Página CURSOS ----- */
 
@@ -202,8 +222,6 @@ li {
 
 .section-videos {
     display: grid;
-    /* grid-template-columns: 1fr 1fr; */
-    /* grid-template-rows: 1fr 1fr 1fr 1fr; */
     justify-items: center;
     grid-template-areas:
         "video1 video2"
@@ -214,27 +232,61 @@ li {
 }
 
 /* ------ Pagina NOSOTROS ----- */
-.carousel-control-next,
-.carousel-control-prev {
-    color: black;
+
+#carouselExample {
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-inner {
+    width: 80%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black;
+    border-radius: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .profile-picture {
-    width: 120px;
+    width: 140px;
 }
 
 .teacher {
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-areas:
+        "nombre textoTeach"
+        "foto textoTeach"
+    ;
     text-align: justify;
     align-items: center;
     margin: 20px;
+    background-color: rgba(170, 238, 198, 0.479);
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705);
+    padding: 10px;
 }
 
-h3 {
+.teacher h3,
+.teacher p,
+.teacher img {
     padding: 5px;
+    margin: 10px;
+
+}
+
+.teacher h3 {
+    grid-area: nombre;
+}
+
+.teacher p {
+    grid-area: textoTeach;
+}
+
+.teacher imga {
+    grid-area: foto;
 }
 
 .historia p {
@@ -315,7 +367,7 @@ textarea {
     display: inline;
 }
 
-.contact_input-email{
+.contact_input-email {
     width: 250px;
 }
 
@@ -368,7 +420,8 @@ i:hover {
         flex-direction: column;
     }
 
-    .contact_input, .contact_input-email{
+    .contact_input,
+    .contact_input-email {
         width: 95%;
     }
 
@@ -399,21 +452,62 @@ i:hover {
     h2 {
         text-align: center;
     }
+
 }
+
+@media (max-width: 660px) {
+
+    .news-box,
+    .welcome-box,
+    .invertida {
+        justify-items: center;
+        display: grid;
+        grid-template-areas:
+            "title"
+            "photo"
+            "texto"
+        ;
+        padding: 5px;
+    }
+    .teacher {
+        grid-template-areas:
+            "nombre"
+            "foto"
+            "textoTeach"
+        ;
+        justify-items: center;
+    }
+}
+
+@media (min-width: 661px) and (max-width: 760px) {
+    .teacher {
+        grid-template-areas:
+            "nombre nombre"
+            "foto textoTeach"
+        ;
+        justify-items: center;
+    }
+
+    .profile-picture {
+        width: 166px;
+    }
+}
+
 
 @media (max-width: 768px) {
 
     .contact_button {
         display: block;
     }
+
 }
 
 @media (min-width: 426px) and (max-width: 768px) {
-    .contact_input-email{
+    .contact_input-email {
         width: 300px;
     }
 
-    
+
 }
 
 
